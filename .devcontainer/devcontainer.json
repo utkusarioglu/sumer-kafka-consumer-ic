@@ -1,0 +1,12 @@
+{
+  "name": "kafka-consumer-ic",
+  "dockerComposeFile": ["../docker-compose.dev.yml", "docker-compose.yml"],
+  "service": "kafka-consumer-ic",
+  "workspaceFolder": "/usr/src/app/kafka-consumer-ic",
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#663300"
+    }
+  },
+  "extensions": []
+}

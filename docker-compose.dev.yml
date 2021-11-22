@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  kafka-consumer-ic:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: kafka-consumer-ic
+    working_dir: /usr/src/app/kafka-consumer-ic
+    volumes:
+      - ./:/usr/src/app/kafka-consumer-ic

@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  kafka-consumer-ic:
+    volumes:
+      - .:/workspace:cached
+      - vscode-exts:/root/.vscode-server/extensions
+      - vscode-exts-insiders:/root/.vscode-server-insiders/extensions
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    depends_on:
+      - kafka
+      - zookeeper
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - 2181:2181
+    networks:
+      - kafka-consumer-ic
+
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - 9092:9092
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    depends_on:
+      - zookeeper
+    networks:
+      - kafka-consumer-ic
+
+volumes:
+  vscode-exts:
+  vscode-exts-insiders:
+
+networks:
+  kafka-consumer-ic:
