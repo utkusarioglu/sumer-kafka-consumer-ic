@@ -1,5 +1,5 @@
 {
-  "name": "kafka-consumer-ic",
+  "name": "sumer-kafka-consumer-ic",
   "version": "1.0.0",
   "description": "Init container for kafka consumers on a kubernetes system",
   "main": "lib/index.js",
