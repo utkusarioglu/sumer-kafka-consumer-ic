@@ -15,7 +15,7 @@
     "outDir": "./lib",
     "stripInternal": true,
     "noEmitOnError": true,
-    "declarationDir": "./@types",
+    "declarationDir": "./types",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
