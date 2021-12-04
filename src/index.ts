@@ -1,6 +1,6 @@
 require("dotenv").config();
 import { Kafka } from "kafkajs";
-import { HOSTNAME, KAFKA_BROKERS } from "./__config";
+import { HOSTNAME, KAFKA_BROKERS, KAFKA_TOPIC } from "./__config";
 
 const kafka = new Kafka({
   clientId: HOSTNAME,
@@ -10,7 +10,7 @@ const kafka = new Kafka({
 const consumer = kafka.consumer({ groupId: "kafka-consumer-ic" });
 
 consumer
-  .subscribe({ topic: "message-send" })
+  .subscribe({ topic: KAFKA_TOPIC })
   .then(() => {
     console.log("Init container running normally, will quit in 5000.");
     setTimeout(() => {

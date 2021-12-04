@@ -3,6 +3,7 @@ declare global {
     interface ProcessEnv {
       HOSTNAME?: string;
       KAFKA_BROKERS?: string;
+      KAFKA_TOPIC?: string;
     }
   }
 }
