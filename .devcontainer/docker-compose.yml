@@ -5,6 +5,7 @@ services:
       - .:/workspace:cached
       - vscode-exts:/root/.vscode-server/extensions
       - vscode-exts-insiders:/root/.vscode-server-insiders/extensions
+      - ~/.config/gh:/root/.config/gh:ro
     command: /bin/sh -c "while sleep 1000; do :; done"
     depends_on:
       - kafka
