@@ -2,6 +2,14 @@ require("dotenv").config();
 import { Kafka } from "kafkajs";
 import { HOSTNAME, KAFKA_BROKERS, KAFKA_TOPIC } from "./__config";
 
+console.log(
+  [
+    `"${HOSTNAME}" attempting connection with:`,
+    `"${KAFKA_BROKERS.join(", ")}"`,
+    ` using topic: "${KAFKA_TOPIC}"`,
+  ].join("\n")
+);
+
 const kafka = new Kafka({
   clientId: HOSTNAME,
   brokers: KAFKA_BROKERS,
