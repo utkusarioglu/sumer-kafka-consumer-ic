@@ -3,5 +3,6 @@ WORKDIR /usr/src/app
 COPY kafka-consumer-ic kafka-consumer-ic
 
 WORKDIR /usr/src/app/kafka-consumer-ic
+RUN yarn
 RUN yarn build
 ENTRYPOINT yarn start
